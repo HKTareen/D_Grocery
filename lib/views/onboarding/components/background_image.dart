@@ -11,9 +11,9 @@ class OnboardingBackgroundImage extends StatelessWidget {
     return Column(
       children: [
         Expanded(child: NetworkImageWithLoader(imageUrl)),
-        const Expanded(
-          child: SizedBox(),
-        )
+        // const Expanded(
+        //   child: SizedBox(),
+        // )
       ],
     );
   }
