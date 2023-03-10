@@ -1,13 +1,11 @@
+import 'package:d_grocery/core/components/custom_back_button.dart';
+import 'package:d_grocery/core/constants/app_defaults.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/components/custom_back_button.dart';
-import '../../core/constants/app_defaults.dart';
-import '../../core/routes/app_routes.dart';
-import 'components/login_form.dart';
-import 'components/social_logins.dart';
+import 'components/reset_password_form.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class ResetPasswordPage extends StatelessWidget {
+  const ResetPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,28 +23,19 @@ class LoginPage extends StatelessWidget {
                   const CustomBackButton(),
                   const Spacer(),
                   Text(
-                    'Welcome back \nto Grofast!',
+                    'New\nPassword',
                     style: Theme.of(context)
                         .textTheme
                         .headlineSmall
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(height: 8),
+                  const Text(
+                      'At least 8 characters, with uppercase, lowercase and special character.'),
+                  AppDefaults.space,
+                  AppDefaults.space,
+                  const ResetPasswordForm(),
                   const Spacer(),
-                  const LoginForm(),
-                  const SocialLogins(),
-                  const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text('New User?'),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.signup);
-                        },
-                        child: const Text('Sign Up'),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),

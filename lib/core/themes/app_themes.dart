@@ -11,7 +11,12 @@ class AppTheme {
   /// Light Theme
   static ThemeData get lightTheme => ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-        textTheme: GoogleFonts.ralewayTextTheme(),
+        textTheme: GoogleFonts.ralewayTextTheme().apply().copyWith(
+              headlineSmall: TextStyle(
+                color: AppColors.darkGreen,
+                fontFamily: defaultTextStyle.fontFamily,
+              ),
+            ),
         scaffoldBackgroundColor: AppColors.scaffoldBackground,
         primaryColor: AppColors.primary,
         cardColor: AppColors.cardColor,
@@ -49,10 +54,11 @@ class AppTheme {
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
             foregroundColor: Colors.white,
-            padding: const EdgeInsets.all(AppDefaults.padding),
-            shape: RoundedRectangleBorder(
-              borderRadius: AppDefaults.borderRadius,
+            padding: const EdgeInsets.symmetric(
+              vertical: 20,
+              horizontal: AppDefaults.padding,
             ),
+            shape: const StadiumBorder(),
             textStyle: defaultTextStyle.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -63,12 +69,10 @@ class AppTheme {
             foregroundColor: AppColors.primary,
             side: const BorderSide(color: AppColors.primary),
             padding: const EdgeInsets.symmetric(
-              horizontal: AppDefaults.padding * 2,
-              vertical: AppDefaults.padding,
+              vertical: 20,
+              horizontal: AppDefaults.padding,
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: AppDefaults.borderRadius,
-            ),
+            shape: const StadiumBorder(),
             textStyle: defaultTextStyle.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -79,6 +83,7 @@ class AppTheme {
             textStyle: defaultTextStyle.copyWith(
               fontWeight: FontWeight.bold,
             ),
+            foregroundColor: AppColors.primary,
           ),
         ),
         tabBarTheme: TabBarTheme(
@@ -110,30 +115,51 @@ class AppTheme {
   /// Dark Theme
   static ThemeData get darkTheme => ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-        textTheme: GoogleFonts.ralewayTextTheme(),
+        textTheme: GoogleFonts.ralewayTextTheme()
+            .apply(
+              bodyColor: Colors.white,
+              displayColor: Colors.white70,
+            )
+            .copyWith(
+              headlineSmall: TextStyle(
+                color: AppColors.primary,
+                fontFamily: defaultTextStyle.fontFamily,
+              ),
+            ),
         scaffoldBackgroundColor: AppColors.scaffoldBackgrounDark,
         primaryColor: AppColors.primary,
         cardColor: AppColors.cardColorDark,
         canvasColor: AppColors.cardColorDark,
         inputDecorationTheme: InputDecorationTheme(
-          enabledBorder: OutlineInputBorder(
-            borderRadius: AppDefaults.borderRadius,
-            borderSide: BorderSide.none,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: AppDefaults.borderRadius,
-            borderSide: const BorderSide(color: AppColors.primary),
-          ),
-          fillColor: AppColors.cardColorDark,
-          filled: true,
-          floatingLabelBehavior: FloatingLabelBehavior.never,
-        ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: AppDefaults.borderRadius,
+              borderSide: BorderSide.none,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: AppDefaults.borderRadius,
+              borderSide: const BorderSide(color: AppColors.primary),
+            ),
+            fillColor: AppColors.cardColorDark,
+            filled: true,
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+            prefixIconColor: Colors.white,
+            suffixIconColor: AppColors.primary,
+            labelStyle: defaultTextStyle.copyWith(
+              color: Colors.white,
+            ),
+            hintStyle: defaultTextStyle.copyWith(
+              color: Colors.white70,
+              fontSize: 14,
+            ),
+            errorStyle: defaultTextStyle.copyWith(
+              color: Colors.redAccent,
+            )),
         appBarTheme: const AppBarTheme(
           backgroundColor: AppColors.scaffoldBackgrounDark,
           elevation: 0,
           systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarBrightness: Brightness.light,
-            statusBarIconBrightness: Brightness.dark,
+            statusBarBrightness: Brightness.dark,
+            statusBarIconBrightness: Brightness.light,
             systemNavigationBarColor: AppColors.scaffoldBackgrounDark,
             systemNavigationBarIconBrightness: Brightness.dark,
             statusBarColor: AppColors.scaffoldBackgrounDark,
@@ -148,10 +174,11 @@ class AppTheme {
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
             foregroundColor: Colors.white,
-            padding: const EdgeInsets.all(AppDefaults.padding),
-            shape: RoundedRectangleBorder(
-              borderRadius: AppDefaults.borderRadius,
+            padding: const EdgeInsets.symmetric(
+              vertical: 20,
+              horizontal: AppDefaults.padding,
             ),
+            shape: const StadiumBorder(),
             textStyle: defaultTextStyle.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -162,12 +189,10 @@ class AppTheme {
             foregroundColor: AppColors.primary,
             side: const BorderSide(color: AppColors.primary),
             padding: const EdgeInsets.symmetric(
-              horizontal: AppDefaults.padding * 2,
-              vertical: AppDefaults.padding,
+              vertical: 20,
+              horizontal: AppDefaults.padding,
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: AppDefaults.borderRadius,
-            ),
+            shape: const StadiumBorder(),
             textStyle: defaultTextStyle.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -175,6 +200,7 @@ class AppTheme {
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
+            foregroundColor: AppColors.primary,
             textStyle: defaultTextStyle.copyWith(
               fontWeight: FontWeight.bold,
             ),
