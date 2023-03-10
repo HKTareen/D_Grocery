@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.3
   cached_network_image: ^3.2.3
+  fluentui_system_icons: ^1.1.190
+  bootstrap_icons: ^1.10.2
+  iconforest_grommet_icons: ^1.0.0+1
+  form_field_validator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
