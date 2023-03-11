@@ -1,8 +1,10 @@
+import 'package:d_grocery/views/home/dialogs/select_location_dialog.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/components/network_image.dart';
 import '../../../core/constants/constants.dart';
+import '../../../core/routes/app_routes.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -25,32 +27,43 @@ class HomeHeader extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppDefaults.padding * 1.5,
-              vertical: AppDefaults.padding / 1.5,
-            ),
-            decoration: BoxDecoration(
-              border: Border.all(width: 0.5, color: Colors.grey),
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Yona\'s home',
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-                const Icon(
-                  FluentIcons.caret_down_20_filled,
-                  size: 16,
-                  color: Colors.grey,
-                )
-              ],
+          InkWell(
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (_) => const LocationSelectSheet(),
+                backgroundColor: Colors.transparent,
+              );
+            },
+            borderRadius: AppDefaults.borderRadius,
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppDefaults.padding * 1.5,
+                vertical: AppDefaults.padding / 1.5,
+              ),
+              decoration: BoxDecoration(
+                border: Border.all(width: 0.5, color: Colors.grey),
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Yona\'s home',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  const Icon(
+                    FluentIcons.caret_down_20_filled,
+                    size: 16,
+                    color: Colors.grey,
+                  )
+                ],
+              ),
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () =>
+                Navigator.pushNamed(context, AppRoutes.notifications),
             icon: Stack(
               alignment: Alignment.topRight,
               children: [

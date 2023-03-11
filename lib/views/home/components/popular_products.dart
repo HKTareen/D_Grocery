@@ -12,6 +12,7 @@ class PopularProducts extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(height: 8),
         Padding(
           padding: const EdgeInsets.all(AppDefaults.padding),
           child: Text(

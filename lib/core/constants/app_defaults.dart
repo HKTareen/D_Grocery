@@ -51,4 +51,14 @@ class AppDefaults {
   static SizedBox spaceWidth = const SizedBox(
     width: padding,
   );
+
+  /// Default Gradient for app
+  static Gradient gradient = const LinearGradient(
+    colors: [
+      Color(0xFF32CB4B),
+      Color(0xFF26AD71),
+    ],
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+  );
 }

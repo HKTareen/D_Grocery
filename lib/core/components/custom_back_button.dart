@@ -2,6 +2,7 @@ import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
 
 class CustomBackButton extends StatelessWidget {
+  /// Leading width should be 75 pixels, otherwise the icon will be in circle
   const CustomBackButton({
     super.key,
     this.isOnAppBar = false,
