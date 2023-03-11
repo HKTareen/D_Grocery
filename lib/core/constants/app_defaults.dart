@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppDefaults {
-  static const double radius = 16;
+  static const double radius = 24;
   static const double margin = 16;
   static const double padding = 16;
 
@@ -49,6 +49,6 @@ class AppDefaults {
 
   /// Defaults Spacing Widget with Default Margin
   static SizedBox spaceWidth = const SizedBox(
-    height: padding,
+    width: padding,
   );
 }
