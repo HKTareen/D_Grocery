@@ -7,6 +7,8 @@ import 'package:d_grocery/views/auth/signup_page.dart';
 import 'package:d_grocery/views/auth/terms_and_conditions_page.dart';
 import 'package:d_grocery/views/auth/verify_your_identity_page.dart';
 import 'package:d_grocery/views/entrypoint/entrypoint_page.dart';
+import 'package:d_grocery/views/home/coupon_details_page.dart';
+import 'package:d_grocery/views/home/notifications_page.dart';
 import 'package:d_grocery/views/onboarding/onboarding_page.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -67,6 +69,16 @@ class RouteGenerator {
       case AppRoutes.termsAndConditions:
         return CupertinoPageRoute(
           builder: (context) => const TermsAndConditionsPage(),
+        );
+
+      case AppRoutes.couponDetails:
+        return CupertinoPageRoute(
+          builder: (context) => const CouponDetailsPage(),
+        );
+
+      case AppRoutes.notifications:
+        return CupertinoPageRoute(
+          builder: (context) => const NotificationsPage(),
         );
 
       default:

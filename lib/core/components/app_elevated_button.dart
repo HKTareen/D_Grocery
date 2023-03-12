@@ -6,6 +6,7 @@ class AppElevatedButton extends StatelessWidget {
   final Gradient gradient;
   final VoidCallback? onPressed;
   final Widget child;
+  final EdgeInsetsGeometry? padding;
 
   const AppElevatedButton({
     Key? key,
@@ -13,6 +14,7 @@ class AppElevatedButton extends StatelessWidget {
     required this.child,
     this.borderRadius,
     this.width,
+    this.padding,
     this.gradient = const LinearGradient(
       colors: [
         Color(0xFF32CB4B),
@@ -38,6 +40,7 @@ class AppElevatedButton extends StatelessWidget {
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           shape: const StadiumBorder(),
+          padding: padding,
         ),
         child: child,
       ),
