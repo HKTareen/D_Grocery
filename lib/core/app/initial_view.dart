@@ -16,7 +16,7 @@ class _InitialViewState extends State<InitialView> {
     // ignore: use_build_context_synchronously
     Navigator.pushNamedAndRemoveUntil(
       context,
-      AppRoutes.onboarding,
+      AppRoutes.entryPoint,
       (v) => false,
     );
   }

@@ -15,12 +15,14 @@ class NetworkImageWithLoader extends StatelessWidget {
     this.radius = AppDefaults.radius,
     this.borderRadius,
     this.placeHolder,
+    this.onTap,
   }) : super(key: key);
 
   final String src;
   final double radius;
   final BorderRadius? borderRadius;
   final Widget? placeHolder;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,16 @@ class NetworkImageWithLoader extends StatelessWidget {
               fit: fit,
             ),
           ),
+          child: onTap != null
+              ? Material(
+                  color: Colors.transparent,
+                  borderRadius: AppDefaults.borderRadius,
+                  child: InkWell(
+                    onTap: onTap,
+                    borderRadius: AppDefaults.borderRadius,
+                  ),
+                )
+              : null,
         ),
         placeholder: (context, url) => placeHolder ?? const Skeleton(),
         errorWidget: (context, url, error) => const Icon(Icons.error),
